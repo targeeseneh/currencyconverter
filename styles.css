@@ -1,0 +1,273 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+
+/* Loading page styles */
+#loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3498db;
+    color: #fff;
+    overflow: hidden;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading p {
+    font-size: 2.2em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.loading-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Conversion page styles */
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.converter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.currency-input {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #007BFF;
+}
+
+select,
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    appearance: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 1em;
+    transition: border-color 0.3s ease; 
+}
+
+
+select:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+}
+
+
+.select-wrapper::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #007BFF;
+    font-size: 0.8em;
+    pointer-events: none;
+    transition: color 0.3s ease; 
+}
+
+
+select:hover, select:focus {
+    border-color: #0056b3;
+}
+
+.select-wrapper:hover::after {
+    color: #0056b3;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#result label {
+    color: #007BFF;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInScaleBounce 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes fadeInScaleBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#convertedAmount {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.welcome {
+    background-color: #3498db;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+    width: 100vw; 
+}
+#welcome-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.welcome-content {
+    text-align: center;
+}
+
+.welcome h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: fadeIn 10s ease-in-out 6s forwards;
+}
+
+.welcome p {
+    font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+

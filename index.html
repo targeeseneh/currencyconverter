@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+   <!-- Update your welcome page content -->
+<div id="loading" class="welcome">
+    <div class="welcome-content">
+        <h1>Welcome</h1>
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+</div>
+
+
+    <div id="app" style="display:none;">
+        <!-- Existing HTML structure -->
+        <div class="converter-container">
+            <div class="currency-input">
+                <label for="fromCurrency">From :</label>
+                <select id="fromCurrency"></select>
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+
+            <div class="currency-input">
+                <label for="toCurrency">To:</label>
+                <select id="toCurrency"></select>
+                <input type="text" id="convertedAmount" readonly>
+            </div>
+        </div>
+
+        <button onclick="convertCurrency()">Convert</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
